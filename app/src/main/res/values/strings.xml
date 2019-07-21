@@ -1,0 +1,22 @@
+<resources>
+  <string name="app_name">TakeVideoApp</string>
+  <string name="time_seconds">Time(secconds)</string>
+  <string name="frame_rate">Frame rate</string>
+  <string name="open_camera">Open camera</string>
+
+  <string-array name="frames">
+    <item>15</item>
+    <item>20</item>
+    <item>25</item>
+    <item>30</item>
+  </string-array>
+
+
+  <string-array name="time">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+  </string-array>
+
+</resources>
