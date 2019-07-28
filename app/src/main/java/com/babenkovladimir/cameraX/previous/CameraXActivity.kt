@@ -1,4 +1,4 @@
-package com.babenkovladimir.cameraX
+package com.babenkovladimir.cameraX.previous
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -19,16 +19,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.babenkovladimir.R
+import com.babenkovladimir.cameraX.AppConstants
 import kotlinx.android.synthetic.main.activity_camera_x2.*
 import java.io.File
 
 @SuppressLint("RestrictedApi")
-class CameraXActivity2 : AppCompatActivity() {
+class CameraXActivity : AppCompatActivity() {
 
     companion object {
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
-        private val TAG = CameraXActivity2::class.java.simpleName
+        private val TAG = CameraXActivity::class.java.simpleName
     }
 
     // Variables
@@ -67,7 +68,11 @@ class CameraXActivity2 : AppCompatActivity() {
         if (allPermissionsGranted())
             viewFinder.post { startCamera() }
         else
-            ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
+            ActivityCompat.requestPermissions(
+                this,
+                REQUIRED_PERMISSIONS,
+                REQUEST_CODE_PERMISSIONS
+            )
     }
 
     override fun onDestroy() {
@@ -80,7 +85,7 @@ class CameraXActivity2 : AppCompatActivity() {
             if (allPermissionsGranted()) {
                 viewFinder.post { startCamera() }
             } else {
-                Toast.makeText(this, "Permissions not granted by the user.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.permission_not_granted_by_user), Toast.LENGTH_SHORT).show()
                 finish()
             }
         }
@@ -148,7 +153,7 @@ class CameraXActivity2 : AppCompatActivity() {
     }
 
     private fun startWatchingService(file: File) {
-        val intentService = Intent(this@CameraXActivity2, MyService::class.java)
+        val intentService = Intent(this@CameraXActivity, MyService::class.java)
         intentService.action = MyService.ACTION_COMMAND_START
         intentService.putExtra(MyService.EXTRA_FILE_PATH, file.parent)
         startService(intentService)

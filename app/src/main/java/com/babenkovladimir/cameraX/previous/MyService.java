@@ -1,4 +1,4 @@
-package com.babenkovladimir.cameraX;
+package com.babenkovladimir.cameraX.previous;
 
 import android.app.Service;
 import android.content.Intent;
