@@ -24,6 +24,7 @@ android {
 
 dependencies {
     def camerax_version = "1.0.0-alpha01"
+    def lifecycle_version = "2.0.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -39,5 +40,11 @@ dependencies {
     implementation "androidx.camera:camera-camera2:${camerax_version}"
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    // YoYo
+    implementation 'com.daimajia.easing:library:2.1@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
 }
