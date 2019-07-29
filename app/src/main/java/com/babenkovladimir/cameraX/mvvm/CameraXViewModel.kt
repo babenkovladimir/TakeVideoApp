@@ -43,7 +43,7 @@ class CameraXViewModel : ViewModel(), LifecycleObserver {
         mFile?.let {
             if (it.exists()) it.delete()
         }
-        closeActivityEvent.call()
+        closeActivityEvent.postValue(Any())
     }
 
     fun onPermissionGranted() {
@@ -52,7 +52,7 @@ class CameraXViewModel : ViewModel(), LifecycleObserver {
 
     fun onPermissionDenied() {
         showErrorToastEvent.postValue(R.string.camera_permissions_not_granted)
-        closeActivityEvent.call()
+        closeActivityEvent.postValue(Any())
     }
 
     fun onVideoSaved(file: File?) {
@@ -65,6 +65,6 @@ class CameraXViewModel : ViewModel(), LifecycleObserver {
     fun onVideoSaveError(useCaseError: VideoCapture.UseCaseError?, message: String?, cause: Throwable?) {
         _buttonEnabled.postValue(true)
         showErrorToastEvent.postValue(R.string.saving_video_error)
-        closeActivityEvent.call()
+        closeActivityEvent.postValue(Any())
     }
 }
