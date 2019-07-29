@@ -11,11 +11,15 @@
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
+    android:logo="@mipmap/ic_launcher"
+    android:roundIcon="@mipmap/ic_launcher"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
 
-    <activity android:name=".MainActivity">
+    <activity
+      android:name=".cameraX.splash.SplashScreenActivity"
+      android:noHistory="true"
+      android:screenOrientation="portrait">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <action android:name="android.intent.action.VIEW"/>
@@ -27,13 +31,25 @@
     <service
       android:enabled="true"
       android:exported="true"
-      android:name=".cameraX.MyService">
-    </service>
+      android:name=".cameraX.previous.MyService"/>
 
     <activity
-      android:name=".cameraX.CameraXActivity2"
-      android:screenOrientation="portrait">
-    </activity>
+      android:name=".cameraX.main.MainActivity"
+      android:screenOrientation="portrait"/>
+
+    <activity
+      android:name=".cameraX.previous.CameraXActivity"
+      android:screenOrientation="portrait"/>
+
+    <activity
+      android:label="@string/mvp_architecture"
+      android:name=".cameraX.mvp.CameraXActivityMVP"
+      android:screenOrientation="portrait"/>
+
+    <activity
+      android:label="@string/mvvm_architecture"
+      android:name=".cameraX.mvvm.CameraXActivityMVVM"
+      android:screenOrientation="portrait"/>
 
   </application>
 

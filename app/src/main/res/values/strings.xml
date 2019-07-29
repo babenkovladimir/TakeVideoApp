@@ -3,6 +3,14 @@
   <string name="time_seconds">Time(secconds)</string>
   <string name="frame_rate">Frame rate</string>
   <string name="open_camera">Open camera</string>
+  <string name="camera_permissions_not_granted">Camera permissions not granted</string>
+  <string name="saving_video_error">Error saving video</string>
+  <string name="mvp_architecture">MVP Architecture</string>
+  <string name="mvvm_architecture">MVVM Architecture</string>
+  <string name="mvvm">MVVM</string>
+  <string name="mvp">MVP</string>
+  <string name="remove_video">Remove video</string>
+  <string name="permission_not_granted_by_user">Permissions not granted by the user.</string>
 
   <string-array name="frames">
     <item>15</item>
